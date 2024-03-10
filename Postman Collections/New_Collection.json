@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "91e6a6ad-a2dc-4741-9190-86e7b0e4aac5",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://creditcalculator.pointschool.ru/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6aba6b34-bc95-4717-8647-0f4478027f9f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"pm.test(\"X-Powered-By is present\", function () {",
+							"    pm.response.to.have.header(\"X-Powered-By\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "aa743f7e-55cb-4087-9e49-0de452c3fb46",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://creditcalculator.pointschool.ru/"
+			},
+			"response": []
+		},
+		{
+			"name": "https://creditcalculator.pointschool.ru/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d539a24-b5f3-4c90-a919-525baafd636e",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e092a85f-1d7f-4b25-9183-1eab954394f3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "https://creditcalculator.pointschool.ru/"
+			},
+			"response": []
+		}
+	]
+}
